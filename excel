@@ -1,0 +1,5 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+import openpyxl
+students_marks =pd.read_excel('SecondSemECEMarks__1_.xlsx')
+print(students_marks.to_string())                             
