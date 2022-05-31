@@ -1,0 +1,13 @@
+def largest_four(a,b,c,d):
+  '''this function accets four numbers and returns the largest number among them'''
+  if a>b and a>c and a>d:
+     return a
+  elif b>a and b>c and b>d:
+     return b
+  elif c>a and c>b and b>d:
+     return c
+  else:
+     return d
+print(largest_four(10,20,30,40))
+
+  
