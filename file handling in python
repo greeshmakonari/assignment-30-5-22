@@ -1,0 +1,13 @@
+f=open('my_duplicate_file.txt','r')
+l=0
+w=0
+c=0
+for line in f:
+  line=line.strip("\n")
+  words=line.split()
+  l+=1
+  w+=len(words)
+  c+=len(line)
+print("lines",l,"words",w,"characters",c) 
+f.close()
+
