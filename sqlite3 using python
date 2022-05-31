@@ -1,0 +1,36 @@
+import sqlite3
+con=sqlite3.connect('marks.db')
+query='''CREATE TABLE if not exists students
+         (ROLLNO INT PRIMARY KEY,
+          Name TEXT,
+          Maths TEXT,
+          Python TEXT)'''
+con.execute(query)
+con.commit()
+query='''INSERT INTO students
+         VALUES(?,?,?,?)'''
+cursor=con.cursor()
+multiple_rows=[('1','vinay','A+','0'),(2,'Likith','F','B'),(3,'Sandy','A+','F'),(4,'Vinod','A+','A+'),(5,'Sumit','B','B+')]
+cursor.executemany(query,multiple_rows)
+(query,multiple_rows)
+con.commit()
+query='''UPDATE students 
+SET Maths=? 
+WHERE RollNo=1
+'''
+cursor.execute(query,('O'))
+con.commit()
+query='''UPDATE students 
+SET Python=? 
+WHERE RollNo=3
+'''
+cursor.execute(query,('O'))
+con.commit()
+query='''SELECT* FROM students'''
+cursor.execute(query)
+all_rows=cursor.fetchall()
+for row in all_rows:
+  print(row)
+con.commit()
+
+
